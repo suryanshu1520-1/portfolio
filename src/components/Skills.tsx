@@ -27,7 +27,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-mono text-[11px] uppercase tracking-widest text-amber-500"
+          className="font-mono text-[11px] uppercase tracking-widest text-brand-500"
         >
           Toolbox
         </motion.span>

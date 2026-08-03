@@ -33,7 +33,7 @@ export default function Process() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="font-mono text-[11px] uppercase tracking-widest text-amber-500">
+          <span className="font-mono text-[11px] uppercase tracking-widest text-brand-500">
             How I ship
           </span>
           <h2 className="font-display mt-4 max-w-2xl text-3xl font-medium tracking-tight text-signal sm:text-4xl">
@@ -61,7 +61,7 @@ export default function Process() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"
             >
-              <div className="font-mono text-xs text-amber-500">{step.n}</div>
+              <div className="font-mono text-xs text-brand-500">{step.n}</div>
               <div className="font-display mt-3 text-xl font-medium text-signal">{step.title}</div>
               <p className="mt-3 text-sm leading-relaxed text-signal-dim">{step.body}</p>
             </motion.div>

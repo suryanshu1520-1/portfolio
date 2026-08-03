@@ -6,7 +6,7 @@ const FACTS = [
     label: 'Education',
     value: 'MPP, NLSIU Bengaluru (2022-2024) · BA Law & Politics, Ambedkar University Delhi (2019-2022)',
   },
-  { label: 'Field languages', value: 'English, Hindi, native Awadhi & Bhojpuri' },
+  { label: 'Field languages', value: 'English (fluent), Hindi (native), Awadhi (native), Bhojpuri (conversational)' },
   { label: 'Focus', value: 'Policy & M&E systems, civic tech, agri and health data' },
 ]
 
@@ -22,7 +22,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7"
           >
-            <span className="font-mono text-[11px] uppercase tracking-widest text-amber-500">
+            <span className="font-mono text-[11px] uppercase tracking-widest text-brand-500">
               About
             </span>
             <h2 className="font-display mt-4 text-3xl font-medium tracking-tight text-signal sm:text-4xl">
@@ -32,8 +32,8 @@ export default function About() {
               <p>
                 I am Suryanshu Chaturvedi. I have a Master of Public Policy from NLSIU Bengaluru
                 and about three years of programme monitoring, results-based management, and
-                policy research across Bihar, Uttar Pradesh, and Telangana, on top of five years
-                of grassroots field experience at a district NGO before that.
+                policy research across Bihar, Uttar Pradesh, Telangana, and Odisha, on top of
+                five years of grassroots field experience at a district NGO before that.
               </p>
               <p>
                 None of the five projects on this page started as a portfolio piece. Tender-Trace,
@@ -44,10 +44,11 @@ export default function About() {
               </p>
               <p>
                 Outside of what is on this page: I have run Anker-methodology Living Income
-                benchmarking across three states, managed a roughly ₹12.5 crore multi-NGO CSR
-                portfolio across 25+ implementation partners, and built the results-framework and a
-                35-check integrity audit behind a ₹2.16 crore farmer-livelihoods programme. Same
-                instinct as the code: take a dataset nobody trusts yet and make it defensible.
+                benchmarking across Bihar, Telangana, and Gautam Buddh Nagar in UP, managed a
+                roughly ₹12.5 crore multi-NGO CSR portfolio across 25+ implementation partners, and
+                built the results-framework and a 35-check integrity audit behind a ₹2.16 crore
+                farmer-livelihoods programme. Same instinct as the code: take a dataset nobody
+                trusts yet and make it defensible.
               </p>
             </div>
           </motion.div>

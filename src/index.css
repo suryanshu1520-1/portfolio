@@ -17,6 +17,9 @@
   --color-signal-dim: #9a9aa2;
   --color-signal-faint: #55565f;
 
+  --color-brand-500: #a78bfa;
+  --color-brand-glow: rgba(167, 139, 250, 0.16);
+
   --color-amber-500: #ffb020;
   --color-amber-glow: rgba(255, 176, 32, 0.16);
   --color-crimson-500: #ff4d4f;
@@ -28,7 +31,7 @@
 }
 
 ::selection {
-  background: var(--color-amber-500);
+  background: var(--color-brand-500);
   color: var(--color-noise-0);
 }
 

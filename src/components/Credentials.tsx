@@ -1,22 +1,46 @@
 import { motion } from 'framer-motion'
 
-const TIMELINE = [
-  { period: '2024 to present', role: 'Policy & M&E practitioner', place: 'Bihar, Uttar Pradesh, Telangana' },
-  { period: '2024 to 2026', role: 'CSR and Living Income consulting', place: 'Sattva Consulting / Arcus Policy Research' },
-  { period: '2022 to 2024', role: 'Master of Public Policy', place: 'NLSIU, Bengaluru' },
-  { period: '2019 to 2022', role: 'BA, Law and Politics', place: 'Ambedkar University, Delhi' },
-  { period: '2014 to 2019', role: 'Grassroots programme monitoring', place: 'DEHAT, Bahraich' },
+const EDUCATION = [
+  { period: '2022 to 2024', role: 'Master of Public Policy (Public Policy Analysis)', place: 'National Law School of India University, Bengaluru' },
+  { period: '2019 to 2022', role: 'B.A. Law and Politics', place: 'Ambedkar University, Delhi' },
+]
+
+const EXPERIENCE = [
+  { period: 'May 2026 to present', role: 'Founder & Product Engineer, Tark 1.0', place: 'Independent' },
+  { period: 'Sep 2025 to Jan 2026', role: 'Research Consultant', place: 'Arcus Policy Research, New Delhi' },
+  { period: 'Sep 2024 to Jul 2025', role: 'CSR Analyst', place: 'Sattva Consulting, Bengaluru' },
+  { period: 'Feb 2023 to Mar 2024', role: 'Research and Communication', place: 'Centre for Responsible Business / Development Solutions, New Delhi' },
+  { period: 'Sep 2020 to Jul 2022', role: 'Graphic Design Consultant', place: 'The George Institute for Global Health, remote' },
+  { period: '2014 to 2019', role: 'Translator and Communications', place: 'School for International Training / DEHAT, Bahraich' },
 ]
 
 const RECORD = [
-  'Built the results-framework for a ₹2.16 Cr livelihoods programme covering 6 gram panchayats and 1,329 farmer families.',
-  'Wrote a 35-check automated integrity audit that re-derives every published indicator from source data.',
-  'Ran Anker-methodology Living Income Benchmark studies across three states for Arcus Policy Research.',
-  'Managed a roughly ₹12.5 Cr multi-NGO CSR portfolio across 25+ implementation partners for Sattva Consulting.',
-  'Designed bilingual Hindi/English survey instruments for fieldwork in two of Uttar Pradesh’s worst-performing health districts.',
+  'Managed a roughly ₹12.5 Cr multi-NGO CSR portfolio across 25+ implementation partners, onboarding 12+ new institutional partners, at Sattva Consulting.',
+  'Led field execution of Anker-methodology Living Income Benchmarking across Bihar, Telangana, and Gautam Buddh Nagar (UP) for Arcus Policy Research.',
+  'Built nutritional adequacy models from WHO Human Energy Requirements, Schofield BMR equations, and NIN guidelines, benchmarked against NFHS-5 and NSS-HCES.',
+  'Designed the results-framework and a 35-check automated integrity audit behind a ₹2.16 Cr farmer-livelihoods programme.',
+  'Structured a decade of unformatted competitive-exam content into an indexed, taxonomy-tagged PostgreSQL corpus for Tark 1.0.',
 ]
 
-const BADGES = ['MPP, NLSIU', 'BA, Ambedkar University', '3+ yrs policy & M&E', 'Native Awadhi & Bhojpuri', '5 shipped tools']
+const BADGES = ['MPP, NLSIU', 'BA, Ambedkar University', '3+ yrs policy & M&E', 'Native Awadhi speaker', '5 shipped tools']
+
+function Timeline({ items }: { items: typeof EDUCATION }) {
+  return (
+    <ol className="space-y-5 border-l-2 border-white/10 pl-5">
+      {items.map((item) => (
+        <li key={item.role}>
+          <div className="font-mono text-[11px] uppercase tracking-widest text-signal-faint">
+            {item.period}
+          </div>
+          <div className="font-display mt-1 text-lg font-medium leading-snug text-signal">
+            {item.role}
+          </div>
+          <div className="text-sm text-signal-dim">{item.place}</div>
+        </li>
+      ))}
+    </ol>
+  )
+}
 
 export default function Credentials() {
   return (
@@ -28,7 +52,7 @@ export default function Credentials() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="font-mono text-[11px] uppercase tracking-widest text-amber-500">
+          <span className="font-mono text-[11px] uppercase tracking-widest text-brand-500">
             Credentials
           </span>
           <h2 className="font-display mt-4 max-w-2xl text-3xl font-medium tracking-tight text-signal sm:text-4xl">
@@ -40,16 +64,22 @@ export default function Credentials() {
           </p>
         </motion.div>
 
-        <div className="mt-14 flex flex-wrap gap-2">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="mt-10 flex flex-wrap gap-2.5"
+        >
           {BADGES.map((badge) => (
             <span
               key={badge}
-              className="rounded-full border border-amber-500/30 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-widest text-amber-500"
+              className="rounded-full border border-brand-500/30 bg-brand-500/[0.06] px-4 py-2 text-sm font-medium text-signal"
             >
               {badge}
             </span>
           ))}
-        </div>
+        </motion.div>
 
         <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-12">
           <motion.div
@@ -60,19 +90,17 @@ export default function Credentials() {
             className="lg:col-span-5"
           >
             <h3 className="font-mono text-[11px] uppercase tracking-widest text-signal-faint">
-              Education & experience
+              Education
             </h3>
-            <ol className="mt-5 space-y-5 border-l-2 border-white/10 pl-5">
-              {TIMELINE.map((item) => (
-                <li key={item.role}>
-                  <div className="font-mono text-[11px] uppercase tracking-widest text-signal-faint">
-                    {item.period}
-                  </div>
-                  <div className="mt-1 font-medium text-signal">{item.role}</div>
-                  <div className="text-sm text-signal-dim">{item.place}</div>
-                </li>
-              ))}
-            </ol>
+            <div className="mt-5">
+              <Timeline items={EDUCATION} />
+            </div>
+            <h3 className="mt-10 font-mono text-[11px] uppercase tracking-widest text-signal-faint">
+              Experience
+            </h3>
+            <div className="mt-5">
+              <Timeline items={EXPERIENCE} />
+            </div>
           </motion.div>
 
           <motion.div
@@ -88,7 +116,7 @@ export default function Credentials() {
             <ul className="mt-5 space-y-4">
               {RECORD.map((line) => (
                 <li key={line} className="flex gap-3 text-sm leading-relaxed text-signal-dim">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-amber-500" />
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-brand-500" />
                   <span>{line}</span>
                 </li>
               ))}

@@ -28,7 +28,7 @@ export default function Nav() {
       }`}
     >
       <motion.div
-        className="h-[2px] bg-amber-500 origin-left"
+        className="h-[2px] bg-brand-500 origin-left"
         style={{ scaleX: progress }}
       />
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">

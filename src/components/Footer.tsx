@@ -8,7 +8,7 @@ export default function Footer() {
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-mono text-[11px] uppercase tracking-widest text-amber-500"
+          className="font-mono text-[11px] uppercase tracking-widest text-brand-500"
         >
           Get in touch
         </motion.span>
@@ -31,7 +31,7 @@ export default function Footer() {
         >
           <a
             href="mailto:suryanshu@dehatindia.org"
-            className="rounded-full border border-amber-500/30 bg-amber-500/10 px-6 py-3 font-mono text-xs uppercase tracking-widest text-amber-500 transition-colors hover:bg-amber-500/20"
+            className="rounded-full border border-brand-500/30 bg-brand-500/10 px-6 py-3 font-mono text-xs uppercase tracking-widest text-brand-500 transition-colors hover:bg-brand-500/20"
           >
             suryanshu@dehatindia.org
           </a>

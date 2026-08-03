@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section id="top" className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden px-6 pt-28 pb-10 sm:px-10">
       <ParticleField
-        accent="#ffb020"
+        accent="#a78bfa"
         className="pointer-events-none absolute inset-0 h-full w-full opacity-70"
       />
       <div
@@ -21,7 +21,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-amber-500"
+          className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-brand-500"
         >
           Suryanshu Chaturvedi · Policy researcher &amp; tool-builder
         </motion.p>
@@ -32,7 +32,7 @@ export default function Hero() {
           className="font-display text-balance max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight text-signal sm:text-7xl"
         >
           I turn raw, messy, real-world data into systems people can{' '}
-          <em className="italic text-amber-500">trust</em>.
+          <em className="italic text-brand-500">trust</em>.
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -53,7 +53,7 @@ export default function Hero() {
         >
           <a
             href="#work"
-            className="rounded-full border border-amber-500/40 bg-amber-500/10 px-6 py-3 font-mono text-xs uppercase tracking-widest text-amber-500 transition-colors hover:bg-amber-500/20"
+            className="rounded-full border border-brand-500/40 bg-brand-500/10 px-6 py-3 font-mono text-xs uppercase tracking-widest text-brand-500 transition-colors hover:bg-brand-500/20"
           >
             See the work
           </a>
