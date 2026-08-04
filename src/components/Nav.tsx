@@ -33,7 +33,7 @@ export default function Nav() {
       />
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
         <a href="#top" className="font-display text-base font-semibold tracking-tight text-signal">
-          Suryanshu
+          Portfolio
         </a>
         <ul className="hidden gap-8 text-sm font-medium tracking-tight text-signal-dim sm:flex">
           {LINKS.map((link) => (
