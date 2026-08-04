@@ -53,13 +53,13 @@ export default function Hero() {
         >
           <a
             href="#work"
-            className="rounded-full border border-brand-500/40 bg-brand-500/10 px-6 py-3 font-mono text-xs uppercase tracking-widest text-brand-500 transition-colors hover:bg-brand-500/20"
+            className="rounded-full border border-brand-500/40 bg-brand-500/10 px-6 py-3 text-sm font-semibold text-brand-500 transition-colors hover:bg-brand-500/20"
           >
             See the work
           </a>
           <a
             href="#contact"
-            className="px-6 py-3 font-mono text-xs uppercase tracking-widest text-signal-dim transition-colors hover:text-signal"
+            className="px-6 py-3 text-sm font-semibold text-signal-dim transition-colors hover:text-signal"
           >
             Get in touch →
           </a>
