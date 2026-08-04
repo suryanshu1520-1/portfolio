@@ -32,11 +32,10 @@ export default function Nav() {
         style={{ scaleX: progress }}
       />
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
-        <a href="#top" className="font-mono text-sm tracking-widest text-signal">
-          SS<span className="text-signal-faint">/</span>
-          <span className="text-signal-dim">portfolio</span>
+        <a href="#top" className="font-display text-base font-semibold tracking-tight text-signal">
+          Suryanshu
         </a>
-        <ul className="hidden gap-8 font-mono text-xs uppercase tracking-widest text-signal-dim sm:flex">
+        <ul className="hidden gap-8 text-sm font-medium tracking-tight text-signal-dim sm:flex">
           {LINKS.map((link) => (
             <li key={link.href}>
               <a href={link.href} className="transition-colors hover:text-signal">

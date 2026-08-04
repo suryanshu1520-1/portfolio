@@ -30,16 +30,16 @@ export default function Footer() {
           className="mt-10 flex flex-wrap gap-4"
         >
           <a
-            href="mailto:suryanshu@dehatindia.org"
-            className="rounded-full border border-brand-500/30 bg-brand-500/10 px-6 py-3 font-mono text-xs uppercase tracking-widest text-brand-500 transition-colors hover:bg-brand-500/20"
+            href="mailto:suryanshu1520@gmail.com"
+            className="rounded-full border border-brand-500/30 bg-brand-500/10 px-6 py-3 text-sm font-medium text-brand-500 transition-colors hover:bg-brand-500/20"
           >
-            suryanshu@dehatindia.org
+            suryanshu1520@gmail.com
           </a>
           <a
             href="https://github.com/suryanshu1520-1"
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-white/[0.08] px-6 py-3 font-mono text-xs uppercase tracking-widest text-signal-dim transition-colors hover:text-signal"
+            className="rounded-full border border-white/[0.08] px-6 py-3 text-sm font-medium text-signal-dim transition-colors hover:text-signal"
           >
             github.com/suryanshu1520-1 ↗
           </a>
@@ -47,7 +47,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/suryanshu-chaturvedi-5765b51a4"
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-white/[0.08] px-6 py-3 font-mono text-xs uppercase tracking-widest text-signal-dim transition-colors hover:text-signal"
+            className="rounded-full border border-white/[0.08] px-6 py-3 text-sm font-medium text-signal-dim transition-colors hover:text-signal"
           >
             LinkedIn ↗
           </a>

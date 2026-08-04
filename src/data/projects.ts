@@ -77,7 +77,7 @@ export const projects: Project[] = [
     id: 'fasal-mis',
     index: '02',
     name: 'FASAL MIS',
-    tagline: 'A monitoring & evaluation dashboard for a ₹2.16 Cr farmer-livelihoods programme',
+    tagline: 'A monitoring & evaluation dashboard for Farmers Action for Sustainable Agro-based Livelihoods (₹2.16 Cr programme)',
     year: '2026',
     status: 'Live',
     theme: 'verdant',
