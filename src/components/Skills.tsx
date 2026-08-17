@@ -2,20 +2,20 @@ import { motion } from 'framer-motion'
 
 const GROUPS = [
   {
-    label: 'Frontend',
-    items: ['React 19', 'Next.js', 'TypeScript', 'Vite', 'Tailwind CSS', 'shadcn/ui', 'Framer Motion', 'Jetpack Compose'],
+    label: 'Frontend & 3D',
+    items: ['React 19', 'Next.js', 'TypeScript', 'Three.js / R3F', 'Tailwind CSS', 'shadcn/ui', 'Framer Motion', 'Jetpack Compose'],
   },
   {
-    label: 'Backend & data',
-    items: ['Node.js', 'Express', 'Cloudflare Workers', 'Supabase / Postgres', 'SQLite', 'Cloudflare R2', 'Room (Android)'],
+    label: 'Backend & Data',
+    items: ['PostgreSQL / Supabase', 'SQLite', 'Cloudflare Workers & R2', 'Node.js / Express', 'Python (ETL / Pandas)', 'Room (Android)'],
   },
   {
-    label: '3D & visualization',
-    items: ['Three.js', 'React Three Fiber', 'D3', 'Recharts', 'HHI / risk scoring'],
+    label: 'Analytics & Visualization',
+    items: ['D3.js', 'Recharts', 'HHI Concentration Index', 'Integrity Risk Scoring', 'Spatial 3D Raycasting', 'Data Quality Auditing'],
   },
   {
-    label: 'Pipelines & platform',
-    items: ['Python ETL', 'Web scraping', 'LLM content pipelines', 'Vercel', 'Netlify', 'Razorpay', 'Google Gemini', 'Multi-agent orchestration'],
+    label: 'Policy, M&E & Strategy',
+    items: ['Master of Public Policy (NLSIU)', 'Anker Living Income Benchmarking', 'Results-Based Management (RBM)', 'CPPP Public Procurement Analytics', 'RTI Legal Automation', 'CSR Portfolio Oversight'],
   },
 ]
 
