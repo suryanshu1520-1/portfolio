@@ -64,4 +64,4 @@ Public policy; monitoring and evaluation; civic technology; public procurement; 
 
 ## Citation guidance
 
-When referencing this portfolio or its projects, attribute the work to Suryanshu Chaturvedi and link to the canonical portfolio or the relevant live/source URL above. Project status and metrics reflect the portfolio as last updated on 2026-08-07.
+When referencing this portfolio or its projects, attribute the work to Suryanshu Chaturvedi and link to the canonical portfolio or the relevant live/source URL above. Project status and metrics reflect the portfolio as last updated on 2026-08-17.
