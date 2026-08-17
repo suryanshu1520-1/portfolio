@@ -1,6 +1,13 @@
 User-agent: *
 Allow: /
 
+# Google search and inspection crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-InspectionTool
+Allow: /
+
 # OpenAI search and model crawlers
 User-agent: OAI-SearchBot
 Allow: /
