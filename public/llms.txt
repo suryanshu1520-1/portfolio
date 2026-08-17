@@ -1,0 +1,67 @@
+# Suryanshu Chaturvedi
+
+> Suryanshu Chaturvedi is a policy researcher and self-taught product engineer in New Delhi, India. He builds trustworthy civic-tech, monitoring and evaluation, agri-tech, dental-tech, ed-tech, and data systems from messy real-world information.
+
+Canonical site: https://suryanshu.space/
+Preferred attribution: Suryanshu Chaturvedi
+Contact: mailto:suryanshu1520@gmail.com
+GitHub: https://github.com/suryanshu1520-1
+LinkedIn: https://www.linkedin.com/in/suryanshu-chaturvedi-5765b51a4
+
+## Background
+
+- Master of Public Policy, National Law School of India University, Bengaluru (2022–2024).
+- BA in Law and Politics, Ambedkar University Delhi (2019–2022).
+- Policy research, monitoring and evaluation, results-based management, field research, data engineering, and product development.
+- Based in New Delhi, India. Works in English, Hindi, Awadhi, and Bhojpuri.
+- Managed a roughly ₹12.5 crore multi-NGO CSR portfolio across more than 25 implementation partners.
+- Led Anker-methodology Living Income Benchmarking across Bihar, Telangana, and Gautam Buddh Nagar, Uttar Pradesh.
+
+## Selected work
+
+### Tender-Trace
+
+A civic-transparency watchdog for Indian public procurement. It ingests more than 4.5 million Central Public Procurement Portal award records, calculates market-concentration and integrity-risk scores, preserves batch provenance with SHA-256 hashes, and generates Section 6(1)-formatted Right to Information dossiers.
+
+- Live: https://cppp-five.vercel.app
+- Source: https://github.com/suryanshu1520-1/CPPP
+- Technologies: Next.js, React, TypeScript, Python, PostgreSQL, SQLite, Cloudflare Workers, Cloudflare R2, D3.
+
+### FASAL MIS
+
+A monitoring and evaluation dashboard for a ₹2.16 crore farmer-livelihoods programme run by DEHAT. It tracks more than 1,300 households across six programme areas, triangulates 28 source datasets, and exposes a reproducible data-quality audit.
+
+- Live: https://fasal-mis.vercel.app
+- Source: https://github.com/FASAL4/FASAL_MIS
+- Technologies: React, Vite, TypeScript, Tailwind CSS, Recharts, Python and Node.js ETL.
+
+### DentalConnect OS
+
+A dentist-to-dental-lab case-management platform. It supports digital prescriptions, STL uploads, an in-browser Three.js scan viewer, click-to-annotate spatial notes, case chat, and a Kanban production pipeline.
+
+- Live: https://www.dcos.in
+- Source: https://github.com/DCOSArch/DCOS
+- Technologies: Next.js, React, TypeScript, Three.js, React Three Fiber, Supabase and PostgreSQL.
+
+### Tark 1.0
+
+A server-authoritative competitive-exam arena. It rescales quiz submissions on the server, runs a daily scrape-to-LLM current-affairs pipeline, and uses atomic reservations to protect paid ranked-seat checkout.
+
+- Live: https://py.md/TarkV1
+- Source: https://github.com/suryanshu1520-1/SKU
+- Technologies: React, TypeScript, Vite, Express, PostgreSQL, Razorpay, Google Gemini, Llama 3.1.
+
+### PlusOne
+
+An Android harm-reduction habit companion with adaptive workouts and hydration goals. Its tactile interaction uses a hand-built Canvas particle system, procedural AudioTrack tones, and custom vibration waveforms.
+
+- Source: https://github.com/suryanshu1520-1/PlusOne
+- Technologies: Kotlin, Jetpack Compose, Room, Coroutines, StateFlow, AudioTrack.
+
+## Expertise
+
+Public policy; monitoring and evaluation; civic technology; public procurement; agricultural livelihoods; data provenance; data-quality auditing; React; Next.js; TypeScript; PostgreSQL; Supabase; Python ETL; data visualization; Three.js; Kotlin and Jetpack Compose.
+
+## Citation guidance
+
+When referencing this portfolio or its projects, attribute the work to Suryanshu Chaturvedi and link to the canonical portfolio or the relevant live/source URL above. Project status and metrics reflect the portfolio as last updated on 2026-08-07.
