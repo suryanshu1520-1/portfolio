@@ -4,10 +4,14 @@ const FACTS = [
   { label: 'Based', value: 'New Delhi, India' },
   {
     label: 'Education',
-    value: 'MPP, NLSIU Bengaluru (2022-2024) · BA Law & Politics, Ambedkar University Delhi (2019-2022)',
+    value: 'MPP, NLSIU Bengaluru (2022–2024) · BA Law & Politics, Ambedkar University Delhi (2019–2022)',
+  },
+  {
+    label: 'Patents',
+    value: '3 Indian Patent Specifications Filed (CRIs) in Clinical Event Sourcing & 3D Mesh Inspection',
   },
   { label: 'Field languages', value: 'English (fluent), Hindi (native), Awadhi (native), Bhojpuri (conversational)' },
-  { label: 'Focus', value: 'Policy & M&E systems, civic tech, agri and health data' },
+  { label: 'Focus', value: 'Civic tech & procurement, bi-temporal healthcare OS, exam simulation & policy telemetry' },
 ]
 
 export default function About() {
@@ -30,25 +34,28 @@ export default function About() {
             </h2>
             <div className="mt-6 space-y-5 leading-relaxed text-signal-dim">
               <p>
-                I am Suryanshu Chaturvedi. I have a Master of Public Policy from NLSIU Bengaluru
-                and about three years of programme monitoring, results-based management, and
-                policy research across Bihar, Uttar Pradesh, Telangana, and Odisha, on top of
-                five years of grassroots field experience at a district NGO before that.
+                I am Suryanshu Chaturvedi. I hold a Master of Public Policy from NLSIU Bengaluru
+                and have extensive experience in programme monitoring, results-based management,
+                econometric policy research, and full-stack software architecture across Bihar,
+                Uttar Pradesh, Telangana, and Odisha, backed by five years of grassroots field
+                experience at a district NGO.
               </p>
               <p>
-                None of the five projects on this page started as a portfolio piece. Tender-Trace,
-                FASAL MIS, and DentalConnect OS each began because a specific piece of fieldwork or
-                client work needed a tool that did not exist yet, and building it myself was faster
-                than waiting for someone else to. Tark and PlusOne are the same instinct pointed at
-                smaller problems.
+                None of the five systems on this page began as a portfolio exercise. Tender-Trace,
+                FASAL MIS, and DentalConnect OS each originated because a concrete piece of fieldwork,
+                research, or clinical coordination required a tool that did not exist yet, and
+                building it from first principles was faster than waiting for someone else to. Tark and
+                PlusOne applied that same insistence on server-authoritative integrity, anti-cheat
+                verifiability, and interaction physics to competitive examinations and behavioral tools.
               </p>
               <p>
-                Outside of what is on this page: I have run Anker-methodology Living Income
-                benchmarking across Bihar, Telangana, and Gautam Buddh Nagar in UP, managed a
-                roughly ₹12.5 crore multi-NGO CSR portfolio across 25+ implementation partners, and
-                built the results-framework and a 35-check integrity audit behind a ₹2.16 crore
-                farmer-livelihoods programme. Same instinct as the code: take a dataset nobody
-                trusts yet and make it defensible.
+                Outside of what is on this page: I have filed 3 complete Indian patent specifications (CRIs)
+                in distributed clinical event stores and ambient interfaces, led Anker-methodology
+                Living Income Benchmarking across Bihar, Telangana, and Gautam Buddh Nagar, managed a
+                ₹12.5 crore multi-partner CSR portfolio across 25+ implementation partners, and built
+                the results-framework and 35-check automated integrity audit behind a ₹2.16 crore
+                farmer-livelihoods programme. The core discipline is identical: take complex, messy
+                real-world data and engineer systems that are mathematically and empirically defensible.
               </p>
             </div>
           </motion.div>

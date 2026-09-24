@@ -23,7 +23,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-brand-500"
         >
-          Suryanshu Chaturvedi · Policy researcher &amp; tool-builder
+          Suryanshu Chaturvedi · Policy Researcher &amp; Systems Architect
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -38,12 +38,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="mt-8 max-w-xl text-lg leading-relaxed text-signal-dim"
+          className="mt-8 max-w-2xl text-lg leading-relaxed text-signal-dim"
         >
-          Five shipped, solo-built products spanning procurement watchdogging,
-          agricultural livelihoods, dental practice ops, exam prep, and personal habit design.
-          Between them: 4.5M+ government records, an NGO's own data audits, an anti-cheat
-          exam arena, and a hand-built particle engine.
+          Five shipped, solo-built systems spanning civic procurement watchdogs, bi-temporal
+          clinical operating platforms, server-authoritative UPSC exam hall simulations,
+          agricultural M&amp;E, and tactile habit engines. Across 100,000+ lines of production code:
+          4.5M+ public contracts, 3 filed patent applications, an authoritative 25-year exam vault,
+          and sovereign ABDM health architectures.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -55,7 +56,7 @@ export default function Hero() {
             href="#work"
             className="rounded-full border border-brand-500/40 bg-brand-500/10 px-6 py-3 text-sm font-semibold text-brand-500 transition-colors hover:bg-brand-500/20"
           >
-            See the work
+            Explore the systems
           </a>
           <a
             href="#contact"
@@ -73,7 +74,7 @@ export default function Hero() {
         className="relative z-10 flex items-center justify-between border-t border-white/[0.06] pt-6 font-mono text-[11px] uppercase tracking-widest text-signal-faint"
       >
         <span>Scroll to explore</span>
-        <span>05 shipped systems</span>
+        <span>05 shipped systems · 100k+ LoC · 3 patents filed</span>
       </motion.div>
     </section>
   )

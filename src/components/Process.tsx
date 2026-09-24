@@ -3,23 +3,23 @@ import { motion } from 'framer-motion'
 const STEPS = [
   {
     n: '01',
-    title: 'Design',
-    body: 'Define the data model and the implementation plan before any code gets written, agent-assisted or not.',
+    title: 'Architect',
+    body: 'Define data models, invariant boundaries, and the master system blueprint before any code is written, agent-assisted or manual.',
   },
   {
     n: '02',
-    title: 'Split',
-    body: 'Break the plan into units of work small enough to hand off, to an agent or to myself, without losing track of any of them.',
+    title: 'Harness',
+    body: 'Break the plan into deterministic units of work backed by verification tests, test doubles, and bounded multi-agent protocols.',
   },
   {
     n: '03',
-    title: 'Review',
-    body: 'Every diff is checked against the plan and the test output before it merges. Nothing ships on a skim.',
+    title: 'Audit',
+    body: 'Every diff is checked against the invariant plan, type signatures, and automated test output before merging. Zero skims.',
   },
   {
     n: '04',
     title: 'Ship & log',
-    body: 'Commit, record what changed and why, move to the next unit. State lives in the repo, not in my head.',
+    body: 'Commit, record architectural mutations in the ledger, and deploy. State and provenance live strictly in the repo.',
   },
 ]
 
@@ -37,17 +37,16 @@ export default function Process() {
             How I ship
           </span>
           <h2 className="font-display mt-4 max-w-2xl text-3xl font-medium tracking-tight text-signal sm:text-4xl">
-            I design and build the hard parts myself. Agents handle the rest.
+            I architect the core systems and state models myself. Bounded agents accelerate the rest.
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-signal-dim">
-            The architecture, the data models, and the harder engineering decisions on these
-            projects are mine: the Integrity Risk Index, the Razorpay checkout race-condition fix,
-            the Canvas particle engine. On Tender-Trace specifically, I also run a small multi-agent
-            setup for well-specified implementation work: building a unit against a plan I've
-            already written, running the test suite, applying a fix whose shape I already know.
-            I review every diff before it merges and decide when something is actually done. It's
-            a way to move faster on the parts that don't require my judgment, not a substitute
-            for it.
+            The architecture, state machines, and harder engineering decisions on these systems are mine:
+            the bi-temporal Merkle event store and patent specifications in DCOS 2.0, the server-authoritative
+            UPSC Prelims engine and Grounding Protocol in Tark, the HHI econometric risk index in Tender-Trace,
+            and the Canvas particle engine in PlusOne. For implementation velocity, I construct formal multi-agent
+            harnesses—such as the Tri-Agent autonomous loop on Tender-Trace or 33/33 test verification suites in
+            DCOS—reviewing every diff against explicit invariant plans before anything merges. It is a method for
+            accelerating execution on well-bounded tasks without ever outsourcing architectural judgment.
           </p>
         </motion.div>
 

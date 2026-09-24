@@ -2,20 +2,52 @@ import { motion } from 'framer-motion'
 
 const GROUPS = [
   {
-    label: 'Frontend & 3D',
-    items: ['React 19', 'Next.js', 'TypeScript', 'Three.js / R3F', 'Tailwind CSS', 'shadcn/ui', 'Framer Motion', 'Jetpack Compose'],
+    label: 'Frontend & 3D Spatial',
+    items: [
+      'React 19',
+      'Next.js 16 (Turbopack)',
+      'TypeScript',
+      'Three.js / React Three Fiber',
+      'Progressive 3D LOD Pyramids',
+      'Tailwind CSS v4',
+      'shadcn/ui',
+      'Jetpack Compose',
+    ],
   },
   {
-    label: 'Backend & Data',
-    items: ['PostgreSQL / Supabase', 'SQLite', 'Cloudflare Workers & R2', 'Node.js / Express', 'Python (ETL / Pandas)', 'Room (Android)'],
+    label: 'Backend, Data & Edge',
+    items: [
+      'PostgreSQL 17 / Supabase',
+      'Bi-Temporal Event Stores',
+      'SHA-256 Merkle Ledgers',
+      'Cloudflare Hyperdrive & R2',
+      'Node.js / Express',
+      'SQLite / Turso',
+      'Room DB (Android)',
+      'Python (ETL / Pandas)',
+    ],
   },
   {
-    label: 'Analytics & Visualization',
-    items: ['D3.js', 'Recharts', 'HHI Concentration Index', 'Integrity Risk Scoring', 'Spatial 3D Raycasting', 'Data Quality Auditing'],
+    label: 'HealthTech & Civic Protocols',
+    items: [
+      'ABDM M1–M3 (Fidelius Curve25519)',
+      'HL7 FHIR R5 Clinical Data',
+      'CPPP Procurement Analytics (4.5M+)',
+      'HHI Monopoly & IRI Risk Scoring',
+      'Section 6(1) RTI Legal Dossiers',
+      'Tri-Agent Autonomous Loops',
+    ],
   },
   {
-    label: 'Policy, M&E & Strategy',
-    items: ['Master of Public Policy (NLSIU)', 'Anker Living Income Benchmarking', 'Results-Based Management (RBM)', 'CPPP Public Procurement Analytics', 'RTI Legal Automation', 'CSR Portfolio Oversight'],
+    label: 'Policy, Verification & AI',
+    items: [
+      'Master of Public Policy (NLSIU)',
+      'Deterministic Grounding (verify.ts)',
+      'Contested-Claim Detection',
+      'Examiner Psyche & PYQ Vault (4,156)',
+      'Anker Living Income Benchmarking',
+      '35-Check M&E Data Quality Auditing',
+    ],
   },
 ]
 

@@ -6,7 +6,7 @@ const EDUCATION = [
 ]
 
 const EXPERIENCE = [
-  { period: 'May 2026 to present', role: 'Founder & Product Engineer, Tark 1.0', place: 'Independent' },
+  { period: 'May 2026 to present', role: 'Systems Architect & Founder, Tark & DCOS 2.0', place: 'Independent' },
   { period: 'Sep 2025 to Jan 2026', role: 'Research Consultant', place: 'Arcus Policy Research, New Delhi' },
   { period: 'Sep 2024 to Jul 2025', role: 'CSR Analyst', place: 'Sattva Consulting, Bengaluru' },
   { period: 'Feb 2023 to Mar 2024', role: 'Research and Communication', place: 'Centre for Responsible Business / Development Solutions, New Delhi' },
@@ -15,14 +15,22 @@ const EXPERIENCE = [
 ]
 
 const RECORD = [
+  'Filed 3 complete Indian patent specifications (CRIs) covering bi-temporal clinical event sourcing, progressive 3D mesh LOD review, and chairside speech intent decoding in DCOS 2.0.',
+  'Engineered Tark’s 25-Year UPSC PYQ Relational Vault (4,156 questions across 140 taxonomy nodes) and strict server-authoritative Prelims Exam Hall with live Diagnostic Autopsy scorecard.',
   'Managed a roughly ₹12.5 Cr multi-NGO CSR portfolio across 25+ implementation partners, onboarding 12+ new institutional partners, at Sattva Consulting.',
   'Led field execution of Anker-methodology Living Income Benchmarking across Bihar, Telangana, and Gautam Buddh Nagar (UP) for Arcus Policy Research.',
-  'Built nutritional adequacy models from WHO Human Energy Requirements, Schofield BMR equations, and NIN guidelines, benchmarked against NFHS-5 and NSS-HCES.',
-  'Designed the results-framework and a 35-check automated integrity audit behind a ₹2.16 Cr farmer-livelihoods programme.',
-  'Structured a decade of unformatted competitive-exam content into an indexed, taxonomy-tagged PostgreSQL corpus for Tark 1.0.',
+  'Designed the results-framework and a 35-check automated integrity audit behind a ₹2.16 Cr farmer-livelihoods programme (FASAL MIS).',
+  'Architected Tender-Trace’s Tri-Agent autonomous ingestion pipeline and Cloudflare Hyperdrive edge query proxy across 4.5M+ public procurement records.',
 ]
 
-const BADGES = ['MPP, NLSIU', 'BA, Ambedkar University', '3+ yrs policy & M&E', 'Native Awadhi speaker', '5 shipped tools']
+const BADGES = [
+  '3 Filed Patents',
+  '100k+ LoC Systems',
+  'MPP, NLSIU',
+  'ABDM & FHIR R5',
+  '3+ yrs policy & M&E',
+  'Native Awadhi speaker',
+]
 
 function Timeline({ items }: { items: typeof EDUCATION }) {
   return (
@@ -59,8 +67,9 @@ export default function Credentials() {
             The record, in brief.
           </h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-signal-dim">
-            Three years of policy and M&E work, five before that in the field. The projects on
-            this page are what I build. This is where that work comes from.
+            Three years of policy and M&amp;E research, five before that in grassroots field operations,
+            and 100k+ lines of production engineering. The projects on this page are what I build.
+            This is where that rigor comes from.
           </p>
         </motion.div>
 
