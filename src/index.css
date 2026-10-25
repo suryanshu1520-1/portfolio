@@ -285,6 +285,141 @@ details[open] summary .plus {
   color: var(--tD);
 }
 
+/* Patent Modal (Brand System v2 / Reference Mockup) */
+.pm a:focus-visible,
+.pm button:focus-visible,
+.pm summary:focus-visible,
+.pm input:focus-visible {
+  outline: 2px solid #0F766E;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.scrim {
+  animation: fadePm 0.35s ease both;
+}
+.dlg {
+  animation: popPm 0.5s cubic-bezier(0.2, 0.75, 0.1, 1) both;
+}
+@keyframes fadePm {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes popPm {
+  from { opacity: 0; transform: translateY(18px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.tab-ind {
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.25, 1);
+}
+.tab-ind[data-pos="0"] {
+  transform: translateX(0%);
+}
+.tab-ind[data-pos="1"] {
+  transform: translateX(100%);
+}
+.tab-ind[data-pos="2"] {
+  transform: translateX(200%);
+}
+.pm [role="tab"] {
+  transition: background-color 0.25s, color 0.25s;
+}
+.pm [role="tab"]:hover {
+  background-color: #ECEBE5;
+}
+.pm [role="tab"][aria-selected="true"] .tab-name {
+  color: #0B1B2B;
+}
+.pm [role="tab"][aria-selected="true"] .tab-num {
+  color: #0F766E;
+}
+.swapA {
+  animation: swapA 0.5s cubic-bezier(0.2, 0.75, 0.1, 1) both;
+}
+.swapB {
+  animation: swapB 0.5s cubic-bezier(0.2, 0.75, 0.1, 1) both;
+}
+@keyframes swapA {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes swapB {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.step-node {
+  animation: litStep 6s linear infinite both;
+}
+@keyframes litStep {
+  0% { background: #FFFFFF; border-color: #DAD8D0; color: #5A6472; }
+  3%, 22% { background: #0F766E; border-color: #0F766E; color: #FFFFFF; }
+  28%, 100% { background: #FFFFFF; border-color: #DAD8D0; color: #5A6472; }
+}
+.chip-btn {
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.chip-btn[aria-pressed="true"] {
+  background: #0B1B2B !important;
+  color: #F6F5F1 !important;
+  border-color: #0B1B2B !important;
+}
+.chip-btn[aria-pressed="false"]:hover {
+  border-color: #0B1B2B !important;
+}
+.tooth {
+  transition: background-color 0.45s ease, border-color 0.45s ease;
+}
+.block {
+  transition: background-color 0.4s, color 0.4s, border-color 0.4s, opacity 0.4s;
+}
+.dot {
+  animation: dotIn 0.5s cubic-bezier(0.2, 0.75, 0.1, 1) both;
+}
+@keyframes dotIn {
+  from { transform: scale(0); }
+  to { transform: none; }
+}
+.ev {
+  animation: evIn 0.45s cubic-bezier(0.2, 0.75, 0.1, 1) both;
+}
+@keyframes evIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: none; }
+}
+.pm input[type="range"] {
+  accent-color: #0F766E;
+}
+.pm details::details-content {
+  height: 0;
+  overflow: clip;
+  transition: height 0.4s cubic-bezier(0.2, 0.75, 0.1, 1), content-visibility 0.4s allow-discrete;
+}
+.pm details[open]::details-content {
+  height: auto;
+}
+.pm summary {
+  list-style: none;
+  cursor: pointer;
+}
+.pm summary::-webkit-details-marker {
+  display: none;
+}
+.pm summary .plus {
+  transition: transform 0.3s cubic-bezier(0.2, 0.75, 0.1, 1);
+}
+.pm details[open] summary .plus {
+  transform: rotate(45deg);
+}
+.btn-g:hover {
+  background-color: #0B1B2B !important;
+  color: #F6F5F1 !important;
+}
+.jump {
+  transition: color 0.2s;
+}
+.jump:hover {
+  color: #0F766E !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
