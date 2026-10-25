@@ -383,54 +383,88 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Right col: Data-Flow Stepper */}
+                {/* Right col: Data-Flow Stepper or Editorial Specimen */}
                 <div className="flex flex-col gap-5.5 min-w-0">
-                  <figure className="m-0 flex flex-col gap-3.5 rounded-[16px] border border-[#22384E] bg-[#12263A] p-5.5 pb-3.5">
-                    <figcaption className="flex items-baseline justify-between gap-3">
-                      <span className="lbl text-[11.5px] text-[#9FB0C2]">How it works</span>
-                      <span className="text-[13px] text-[#9FB0C2]">source → decision</span>
-                    </figcaption>
+                  {p.id === 'tark' ? (
+                    <div className="flex flex-col gap-4 rounded-[16px] border border-[#22384E] bg-[#12263A] p-5.5 pb-4.5">
+                      <div className="flex items-baseline justify-between gap-3 border-b border-[#22384E]/80 pb-3">
+                        <span className="lbl text-[11.5px] text-[#5CC8B8]">Daily brief excerpt</span>
+                        <span className="text-[13px] text-[#9FB0C2]">PIB Delhi · Gazette lineage</span>
+                      </div>
 
-                    <div className="relative">
-                      <span
-                        aria-hidden="true"
-                        className="absolute top-6 bottom-6 left-4 w-[2px] bg-[#22384E]"
-                      >
-                        <span className="flow-pulse" />
-                      </span>
+                      <div className="flex flex-col gap-2 pt-0.5">
+                        <h4 className="m-0 font-['Source_Serif_4',Georgia,serif] text-[18px] font-medium leading-[1.35] text-[#E6ECF2]">
+                          Cabinet approves PM-Surya Ghar: Muft Bijli Yojana with ₹75,021 crore outlay
+                        </h4>
+                        <p className="m-0 text-[14.5px] leading-relaxed text-[#9FB0C2]">
+                          Provides up to 300 units of free electricity monthly for 1 crore households, backed by statutory central financial assistance.
+                        </p>
+                      </div>
 
-                      <ol className="relative m-0 flex list-none flex-col p-0">
-                        {p.flow.map((f) => (
-                          <li
-                            key={f.i}
-                            className="grid grid-cols-[36px_minmax(0,1fr)] gap-4 py-2.5"
-                          >
-                            <span
-                              className="flow-node grid h-9 w-9 place-items-center rounded-full border-2 border-[#22384E] bg-[#0B1B2B] text-[14px] font-bold text-[#9FB0C2]"
-                              style={{ animationDelay: f.delay }}
-                              aria-hidden="true"
+                      <div className="grid grid-cols-1 gap-3 pt-3 border-t border-[#22384E]/70 sm:grid-cols-2 text-[13px]">
+                        <div className="flex flex-col gap-0.5">
+                          <span className="lbl text-[10.5px] text-[#9FB0C2]">Syllabus linkage</span>
+                          <span className="text-[13.5px] text-[#E6ECF2] font-medium">GS Paper III (Energy Infrastructure)</span>
+                        </div>
+                        <div className="flex flex-col gap-0.5">
+                          <span className="lbl text-[10.5px] text-[#9FB0C2]">Historical exam prior</span>
+                          <span className="text-[13.5px] text-[#E6ECF2] font-medium">Mined from 4,156 past questions</span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-between pt-2 border-t border-[#22384E]/50 text-[12.5px] text-[#5CC8B8]">
+                        <span>✓ Sentence-level statutory grounding</span>
+                        <span className="text-[#9FB0C2]">Zero contested claims</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <figure className="m-0 flex flex-col gap-3.5 rounded-[16px] border border-[#22384E] bg-[#12263A] p-5.5 pb-3.5">
+                      <figcaption className="flex items-baseline justify-between gap-3">
+                        <span className="lbl text-[11.5px] text-[#9FB0C2]">How it works</span>
+                        <span className="text-[13px] text-[#9FB0C2]">source → decision</span>
+                      </figcaption>
+
+                      <div className="relative">
+                        <span
+                          aria-hidden="true"
+                          className="absolute top-6 bottom-6 left-4 w-[2px] bg-[#22384E]"
+                        >
+                          <span className="flow-pulse" />
+                        </span>
+
+                        <ol className="relative m-0 flex list-none flex-col p-0">
+                          {p.flow.map((f) => (
+                            <li
+                              key={f.i}
+                              className="grid grid-cols-[36px_minmax(0,1fr)] gap-4 py-2.5"
                             >
-                              {f.i}
-                            </span>
-                            <span className="flex flex-col gap-1 pt-1 min-w-0">
-                              <span className="flex flex-wrap items-baseline gap-2">
-                                <span className="lbl text-[11px] text-[#9FB0C2]">{f.kind}</span>
-                                <span
-                                  className="flow-title text-[16px] font-semibold text-[#E6ECF2]"
-                                  style={{ animationDelay: f.delay }}
-                                >
-                                  {f.t}
+                              <span
+                                className="flow-node grid h-9 w-9 place-items-center rounded-full border-2 border-[#22384E] bg-[#0B1B2B] text-[14px] font-bold text-[#9FB0C2]"
+                                style={{ animationDelay: f.delay }}
+                                aria-hidden="true"
+                              >
+                                {f.i}
+                              </span>
+                              <span className="flex flex-col gap-1 pt-1 min-w-0">
+                                <span className="flex flex-wrap items-baseline gap-2">
+                                  <span className="lbl text-[11px] text-[#9FB0C2]">{f.kind}</span>
+                                  <span
+                                    className="flow-title text-[16px] font-semibold text-[#E6ECF2]"
+                                    style={{ animationDelay: f.delay }}
+                                  >
+                                    {f.t}
+                                  </span>
+                                </span>
+                                <span className="text-[14px] leading-relaxed text-[#9FB0C2]">
+                                  {f.d}
                                 </span>
                               </span>
-                              <span className="text-[14px] leading-relaxed text-[#9FB0C2]">
-                                {f.d}
-                              </span>
-                            </span>
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
-                  </figure>
+                            </li>
+                          ))}
+                        </ol>
+                      </div>
+                    </figure>
+                  )}
 
                   <div className="flex flex-wrap gap-1.5">
                     {p.stack.map((tech) => (
