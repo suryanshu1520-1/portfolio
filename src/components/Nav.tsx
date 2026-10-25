@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 
+interface NavProps {
+  onOpenPatents?: () => void
+}
+
 const LINKS = [
   { href: '#about', label: 'About' },
   { href: '#work', label: 'Work' },
@@ -9,7 +13,7 @@ const LINKS = [
   { href: '#contact', label: 'Contact' },
 ]
 
-export default function Nav() {
+export default function Nav({ onOpenPatents }: NavProps) {
   const { scrollYProgress } = useScroll()
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.3 })
   const [scrolled, setScrolled] = useState(false)
@@ -35,15 +39,25 @@ export default function Nav() {
         <a href="#top" className="font-display text-base font-semibold tracking-tight text-signal">
           Portfolio
         </a>
-        <ul className="hidden gap-8 text-sm font-medium tracking-tight text-signal-dim sm:flex">
-          {LINKS.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className="transition-colors hover:text-signal">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center gap-6 sm:gap-8">
+          <ul className="hidden gap-8 text-sm font-medium tracking-tight text-signal-dim sm:flex">
+            {LINKS.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="transition-colors hover:text-signal">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          {onOpenPatents && (
+            <button
+              onClick={onOpenPatents}
+              className="rounded-full border border-teal-500/40 bg-teal-500/10 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-wider text-teal-300 transition-colors hover:bg-teal-500/20"
+            >
+              Patents (CRIs)
+            </button>
+          )}
+        </div>
       </nav>
     </header>
   )

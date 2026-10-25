@@ -4,6 +4,7 @@ import { themes } from '../data/themes'
 
 interface ProjectCardProps {
   project: Project
+  onOpenPatents?: () => void
 }
 
 const fadeUp = {
@@ -11,7 +12,7 @@ const fadeUp = {
   show: { opacity: 1, y: 0 },
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, onOpenPatents }: ProjectCardProps) {
   const theme = themes[project.theme]
 
   return (
@@ -54,15 +55,44 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {link.label} ↗
               </a>
             ))}
+
+            {project.id === 'dcos' && onOpenPatents && (
+              <button
+                type="button"
+                onClick={onOpenPatents}
+                className="rounded-full border border-teal-500/40 bg-teal-500/10 px-4 py-2 font-mono text-[11px] uppercase tracking-widest text-teal-300 transition-colors hover:bg-teal-500/20 hover:text-white"
+              >
+                Patent Specs (Form 2) ↗
+              </button>
+            )}
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-6">
-            {project.metrics.map((m) => (
-              <div key={m.label}>
-                <div className="font-display text-2xl font-medium text-signal">{m.value}</div>
-                <div className="mt-1 text-xs leading-snug text-signal-faint">{m.label}</div>
-              </div>
-            ))}
+            {project.metrics.map((m) => {
+              const isPatentMetric = m.label.toLowerCase().includes('patent') || m.value.toLowerCase().includes('patent')
+              if (isPatentMetric && onOpenPatents) {
+                return (
+                  <button
+                    key={m.label}
+                    type="button"
+                    onClick={onOpenPatents}
+                    className="group text-left transition-all hover:opacity-90"
+                  >
+                    <div className="font-display text-2xl font-medium text-teal-300 group-hover:underline flex items-center gap-1.5">
+                      <span>{m.value}</span>
+                      <span className="font-mono text-xs opacity-70">↗</span>
+                    </div>
+                    <div className="mt-1 text-xs leading-snug text-teal-400/80">{m.label}</div>
+                  </button>
+                )
+              }
+              return (
+                <div key={m.label}>
+                  <div className="font-display text-2xl font-medium text-signal">{m.value}</div>
+                  <div className="mt-1 text-xs leading-snug text-signal-faint">{m.label}</div>
+                </div>
+              )
+            })}
           </div>
         </motion.div>
 

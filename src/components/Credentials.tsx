@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion'
 
+interface CredentialsProps {
+  onOpenPatents?: (id?: string) => void
+}
+
 const EDUCATION = [
   { period: '2022 to 2024', role: 'Master of Public Policy (Public Policy Analysis)', place: 'National Law School of India University, Bengaluru' },
   { period: '2019 to 2022', role: 'B.A. Law and Politics', place: 'Ambedkar University, Delhi' },
@@ -15,21 +19,21 @@ const EXPERIENCE = [
 ]
 
 const RECORD = [
-  'Filed 3 complete Indian patent specifications (CRIs) covering bi-temporal clinical event sourcing, progressive 3D mesh LOD review, and chairside speech intent decoding in DCOS 2.0.',
-  'Engineered Tark’s 25-Year UPSC PYQ Relational Vault (4,156 questions across 140 taxonomy nodes) and strict server-authoritative Prelims Exam Hall with live Diagnostic Autopsy scorecard.',
-  'Managed a roughly ₹12.5 Cr multi-NGO CSR portfolio across 25+ implementation partners, onboarding 12+ new institutional partners, at Sattva Consulting.',
+  'Authored 3 complete Form 2 Indian patent specifications (CRIs) covering bi-temporal clinical event sourcing, zero-driver 3D mesh LOD decimation, and dual-layer clinical-lab gating in DCOS 2.0.',
+  'Engineered Tark’s QBank Final Edition (4,156 authentic 2001–2025 questions with 100% booklet parity), Mains GS1–GS4 & Essay extractor with layout recovery, and server-authoritative Prelims Exam Hall.',
+  'Architected Tender-Trace’s Tri-Agent autonomous ingestion protocol (v2) and Cloudflare Hyperdrive edge query proxy (<5ms latency) across 4.5M+ public procurement records.',
+  'Managed a ₹12.5 Cr multi-NGO CSR portfolio across 25+ implementation partners, onboarding 12+ new institutional partners, at Sattva Consulting.',
   'Led field execution of Anker-methodology Living Income Benchmarking across Bihar, Telangana, and Gautam Buddh Nagar (UP) for Arcus Policy Research.',
   'Designed the results-framework and a 35-check automated integrity audit behind a ₹2.16 Cr farmer-livelihoods programme (FASAL MIS).',
-  'Architected Tender-Trace’s Tri-Agent autonomous ingestion pipeline and Cloudflare Hyperdrive edge query proxy across 4.5M+ public procurement records.',
 ]
 
 const BADGES = [
-  '3 Filed Patents',
-  '100k+ LoC Systems',
-  'MPP, NLSIU',
-  'ABDM & FHIR R5',
-  '3+ yrs policy & M&E',
-  'Native Awadhi speaker',
+  { label: '3 Form 2 Patents (CRIs)', isPatent: true },
+  { label: '120k+ LoC Systems', isPatent: false },
+  { label: 'MPP, NLSIU', isPatent: false },
+  { label: 'ABDM & FHIR R5', isPatent: false },
+  { label: '3+ yrs policy & M&E', isPatent: false },
+  { label: 'Native Awadhi speaker', isPatent: false },
 ]
 
 function Timeline({ items }: { items: typeof EDUCATION }) {
@@ -50,7 +54,7 @@ function Timeline({ items }: { items: typeof EDUCATION }) {
   )
 }
 
-export default function Credentials() {
+export default function Credentials({ onOpenPatents }: CredentialsProps) {
   return (
     <section id="credentials" className="relative border-t border-white/[0.06] px-6 py-24 sm:px-10 sm:py-32">
       <div className="mx-auto max-w-6xl">
@@ -68,7 +72,7 @@ export default function Credentials() {
           </h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-signal-dim">
             Three years of policy and M&amp;E research, five before that in grassroots field operations,
-            and 100k+ lines of production engineering. The projects on this page are what I build.
+            and 120k+ lines of production engineering. The projects on this page are what I build.
             This is where that rigor comes from.
           </p>
         </motion.div>
@@ -80,14 +84,25 @@ export default function Credentials() {
           transition={{ duration: 0.5, delay: 0.05 }}
           className="mt-10 flex flex-wrap gap-2.5"
         >
-          {BADGES.map((badge) => (
-            <span
-              key={badge}
-              className="rounded-full border border-brand-500/30 bg-brand-500/[0.06] px-4 py-2 text-sm font-medium text-signal"
-            >
-              {badge}
-            </span>
-          ))}
+          {BADGES.map((b) =>
+            b.isPatent ? (
+              <button
+                key={b.label}
+                onClick={() => onOpenPatents?.()}
+                className="group flex items-center gap-1.5 rounded-full border border-teal-500/40 bg-teal-500/[0.08] px-4 py-2 text-sm font-medium text-teal-300 transition-all hover:border-teal-400 hover:bg-teal-500/20 hover:text-white"
+              >
+                <span>{b.label}</span>
+                <span className="text-xs transition-transform group-hover:translate-x-0.5">↗</span>
+              </button>
+            ) : (
+              <span
+                key={b.label}
+                className="rounded-full border border-brand-500/30 bg-brand-500/[0.06] px-4 py-2 text-sm font-medium text-signal"
+              >
+                {b.label}
+              </span>
+            )
+          )}
         </motion.div>
 
         <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -130,6 +145,29 @@ export default function Credentials() {
                 </li>
               ))}
             </ul>
+
+            {/* Patent Specifications Callout Card */}
+            <div className="mt-8 rounded-xl border border-teal-500/20 bg-teal-500/[0.04] p-5">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-teal-400" />
+                    <span className="font-mono text-xs uppercase tracking-wider text-teal-300">
+                      Indian CRI Patent Specifications (Form 2)
+                    </span>
+                  </div>
+                  <p className="mt-1.5 text-xs text-signal-dim">
+                    Three complete specifications prepared under Section 10 &amp; Rule 13 of the Indian Patents Act, 1970: Bi-Temporal Merkle Odontogram, Zero-Driver 3D Mesh Ingestion, and Dual-Layer CAD/CAM Gating.
+                  </p>
+                </div>
+                <button
+                  onClick={() => onOpenPatents?.()}
+                  className="flex-none rounded-lg border border-teal-500/40 bg-teal-500/10 px-3.5 py-2 font-mono text-xs font-medium text-teal-300 transition-colors hover:bg-teal-500/20 hover:text-white"
+                >
+                  Explore Specifications ↗
+                </button>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

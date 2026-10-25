@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion'
 import ParticleField from './ParticleField'
 
-export default function Hero() {
+interface HeroProps {
+  onOpenPatents?: () => void
+}
+
+export default function Hero({ onOpenPatents }: HeroProps) {
   return (
     <section id="top" className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden px-6 pt-28 pb-10 sm:px-10">
       <ParticleField
@@ -42,8 +46,8 @@ export default function Hero() {
         >
           Five shipped, solo-built systems spanning civic procurement watchdogs, bi-temporal
           clinical operating platforms, server-authoritative UPSC exam hall simulations,
-          agricultural M&amp;E, and tactile habit engines. Across 100,000+ lines of production code:
-          4.5M+ public contracts, 3 filed patent applications, an authoritative 25-year exam vault,
+          agricultural M&amp;E, and tactile habit engines. Across 120,000+ lines of production code:
+          4.5M+ public contracts, 3 Form 2 patent specifications (CRIs), an authoritative 25-year exam vault,
           and sovereign ABDM health architectures.
         </motion.p>
         <motion.div
@@ -58,6 +62,12 @@ export default function Hero() {
           >
             Explore the systems
           </a>
+          <button
+            onClick={() => onOpenPatents?.()}
+            className="rounded-full border border-teal-500/40 bg-teal-500/10 px-6 py-3 text-sm font-semibold text-teal-300 transition-colors hover:bg-teal-500/20"
+          >
+            Patent Specifications (CRIs) ↗
+          </button>
           <a
             href="#contact"
             className="px-6 py-3 text-sm font-semibold text-signal-dim transition-colors hover:text-signal"
@@ -74,7 +84,16 @@ export default function Hero() {
         className="relative z-10 flex items-center justify-between border-t border-white/[0.06] pt-6 font-mono text-[11px] uppercase tracking-widest text-signal-faint"
       >
         <span>Scroll to explore</span>
-        <span>05 shipped systems · 100k+ LoC · 3 patents filed</span>
+        <div className="flex items-center gap-3">
+          <span>05 shipped systems · 120k+ LoC</span>
+          <span>·</span>
+          <button
+            onClick={() => onOpenPatents?.()}
+            className="text-teal-400 hover:underline cursor-pointer"
+          >
+            3 Form 2 Patent Specifications (CRIs) ↗
+          </button>
+        </div>
       </motion.div>
     </section>
   )

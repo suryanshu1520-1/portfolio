@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion'
 
+interface AboutProps {
+  onOpenPatents?: () => void
+}
+
 const FACTS = [
   { label: 'Based', value: 'New Delhi, India' },
   {
@@ -8,13 +12,14 @@ const FACTS = [
   },
   {
     label: 'Patents',
-    value: '3 Indian Patent Specifications Filed (CRIs) in Clinical Event Sourcing & 3D Mesh Inspection',
+    value: '3 Form 2 Indian Patent Specifications (CRIs) in Clinical Event Sourcing, 3D LOD & CAD/CAM Gating',
+    isPatent: true,
   },
   { label: 'Field languages', value: 'English (fluent), Hindi (native), Awadhi (native), Bhojpuri (conversational)' },
   { label: 'Focus', value: 'Civic tech & procurement, bi-temporal healthcare OS, exam simulation & policy telemetry' },
 ]
 
-export default function About() {
+export default function About({ onOpenPatents }: AboutProps) {
   return (
     <section id="about" className="relative border-t border-white/[0.06] px-6 py-24 sm:px-10 sm:py-32">
       <div className="mx-auto max-w-6xl">
@@ -49,10 +54,17 @@ export default function About() {
                 verifiability, and interaction physics to competitive examinations and behavioral tools.
               </p>
               <p>
-                Outside of what is on this page: I have filed 3 complete Indian patent specifications (CRIs)
-                in distributed clinical event stores and ambient interfaces, led Anker-methodology
-                Living Income Benchmarking across Bihar, Telangana, and Gautam Buddh Nagar, managed a
-                ₹12.5 crore multi-partner CSR portfolio across 25+ implementation partners, and built
+                Outside of what is on this page: I have authored{' '}
+                <button
+                  type="button"
+                  onClick={() => onOpenPatents?.()}
+                  className="font-medium text-teal-300 underline decoration-teal-500/40 underline-offset-4 hover:text-white hover:decoration-teal-400"
+                >
+                  3 complete Form 2 Indian patent specifications (CRIs)
+                </button>{' '}
+                in distributed clinical event stores, progressive 3D mesh review, and clinical-laboratory gating;
+                led Anker-methodology Living Income Benchmarking across Bihar, Telangana, and Gautam Buddh Nagar;
+                managed a ₹12.5 crore multi-partner CSR portfolio across 25+ implementation partners; and built
                 the results-framework and 35-check automated integrity audit behind a ₹2.16 crore
                 farmer-livelihoods programme. The core discipline is identical: take complex, messy
                 real-world data and engineer systems that are mathematically and empirically defensible.
@@ -73,7 +85,20 @@ export default function About() {
                   <dt className="font-mono text-[11px] uppercase tracking-widest text-signal-faint">
                     {fact.label}
                   </dt>
-                  <dd className="mt-1.5 text-sm leading-relaxed text-signal">{fact.value}</dd>
+                  {fact.isPatent ? (
+                    <dd className="mt-1.5 text-sm leading-relaxed text-teal-300">
+                      <button
+                        type="button"
+                        onClick={() => onOpenPatents?.()}
+                        className="text-left hover:underline flex items-start gap-1"
+                      >
+                        <span>{fact.value}</span>
+                        <span className="font-mono text-xs text-teal-400">↗</span>
+                      </button>
+                    </dd>
+                  ) : (
+                    <dd className="mt-1.5 text-sm leading-relaxed text-signal">{fact.value}</dd>
+                  )}
                 </div>
               ))}
             </dl>
