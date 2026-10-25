@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import PatentModal from './components/PatentModal'
+import { TarkShowcase } from './components/work/TarkShowcase'
+import { TenderTraceShowcase } from './components/work/TenderTraceShowcase'
+import { FasalShowcase } from './components/work/FasalShowcase'
+import { DcosShowcase } from './components/work/DcosShowcase'
+import { PlusOneShowcase } from './components/work/PlusOneShowcase'
 import {
-  REDESIGN_PROJECTS,
   LIVE_INDEX,
   PROOF_ITEMS,
   OFFERS_HIRE,
@@ -36,10 +40,20 @@ export default function App() {
     ? ['tark', 'fasal', 'tender', 'dcos']
     : ['tark', 'tender', 'dcos', 'fasal']
 
-  const projects = projectOrder.map((id, i) => ({
-    ...REDESIGN_PROJECTS[id],
-    n: `0${i + 1}`,
-  }))
+  const renderProject = (id: string) => {
+    switch (id) {
+      case 'tark':
+        return <TarkShowcase key="tark" />
+      case 'fasal':
+        return <FasalShowcase key="fasal" />
+      case 'tender':
+        return <TenderTraceShowcase key="tender" />
+      case 'dcos':
+        return <DcosShowcase key="dcos" onOpenPatents={handleOpenPatents} />
+      default:
+        return null
+    }
+  }
 
   const offers = isHire ? OFFERS_HIRE : OFFERS_BUILD
 
@@ -294,202 +308,21 @@ export default function App() {
       <section id="work" className="bg-[#0B1B2B] text-[#E6ECF2]">
         <div className="mx-auto flex max-w-[1280px] flex-col gap-12 px-4 py-[clamp(72px,9vw,128px)] sm:px-8">
           <div className="rv flex flex-wrap items-end justify-between gap-6">
-            <div className="flex max-w-[760px] flex-col gap-3.5">
-              <span className="lbl text-[#5CC8B8]">Selected work</span>
+            <div className="flex max-w-[780px] flex-col gap-3.5">
+              <span className="lbl text-[#5CC8B8]">Selected Systems &amp; Evidence Engines</span>
               <h2 className="m-0 font-['Source_Serif_4',Georgia,serif] text-[clamp(34px,4.4vw,60px)] font-medium leading-[1.06] tracking-[-0.02em]">
                 Each one started as a question someone couldn't answer.
               </h2>
             </div>
-            <p className="m-0 max-w-[340px] text-[15px] text-[#9FB0C2]">
-              Every card shows how the data moves, step by step, from source to decision.
+            <p className="m-0 max-w-[360px] text-[15px] leading-relaxed text-[#9FB0C2]">
+              Live policy intelligence, forensic civic auditing, rural econometric M&amp;E, and patented clinical architectures. Built with provable mathematical and statutory guarantees.
             </p>
           </div>
 
-          <div className="flex flex-col gap-5">
-            {projects.map((p) => (
-              <article
-                key={p.id}
-                className="card rv grid grid-cols-1 gap-x-14 gap-y-9 rounded-[22px] border border-[#22384E] p-[clamp(22px,3vw,44px)] lg:grid-cols-2"
-              >
-                {/* Left col */}
-                <div className="flex flex-col gap-4.5 min-w-0">
-                  <div className="flex flex-wrap items-center gap-x-3.5 gap-y-2.5">
-                    <span className="lbl text-[#5CC8B8]">{p.n}</span>
-                    <span className="lbl text-[#9FB0C2]">{p.tag}</span>
-                    {p.flagship && (
-                      <span className="lbl rounded-full bg-[#5CC8B8] px-2.5 py-1 text-[#0B1B2B]">
-                        Flagship
-                      </span>
-                    )}
-                  </div>
-
-                  <h3 className="ttl m-0 font-['Source_Serif_4',Georgia,serif] text-[clamp(30px,3.2vw,46px)] font-medium leading-[1.04] tracking-[-0.02em]">
-                    {p.name}
-                  </h3>
-
-                  <p className="m-0 text-[19px] leading-[1.45] text-[#E6ECF2]">{p.oneLine}</p>
-                  <p className="m-0 text-[14px] text-[#9FB0C2]">{p.context}</p>
-
-                  <div className="grid grid-cols-1 gap-4.5 pt-1.5 sm:grid-cols-2">
-                    <div className="flex flex-col gap-1.5">
-                      <span className="lbl text-[11.5px] text-[#9FB0C2]">The problem</span>
-                      <p className="m-0 text-[15px] leading-relaxed text-[#E6ECF2]/85">
-                        {p.problem}
-                      </p>
-                    </div>
-                    <div className="flex flex-col gap-1.5">
-                      <span className="lbl text-[11.5px] text-[#9FB0C2]">What I built</span>
-                      <p className="m-0 text-[15px] leading-relaxed text-[#E6ECF2]/85">
-                        {p.did}
-                      </p>
-                    </div>
-                  </div>
-
-                  {p.flagship && (
-                    <div className="flex flex-col gap-1.5 rounded-[14px] border border-[#22384E] bg-[#12263A] p-4">
-                      <span className="lbl text-[11.5px] text-[#5CC8B8]">
-                        Why it matters beyond exams
-                      </span>
-                      <p className="m-0 text-[15px] text-[#E6ECF2]">{p.why}</p>
-                    </div>
-                  )}
-
-                  <div className="mt-auto flex flex-wrap gap-2.5 pt-2">
-                    <a
-                      className="btn inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#E6ECF2] px-4.5 text-[15px] font-semibold text-[#0B1B2B] no-underline"
-                      href={p.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Open {p.liveLabel} <span aria-hidden="true">↗</span>
-                    </a>
-                    <a
-                      className="btn inline-flex min-h-[44px] items-center gap-2 rounded-full border border-[#22384E] px-4.5 text-[15px] font-medium text-[#E6ECF2] no-underline hover:border-[#5CC8B8]"
-                      href={p.code}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Source <span aria-hidden="true">↗</span>
-                    </a>
-                    {p.id === 'dcos' && (
-                      <button
-                        type="button"
-                        onClick={() => handleOpenPatents()}
-                        className="btn inline-flex min-h-[44px] items-center gap-2 rounded-full border border-[#5CC8B8]/40 bg-[#5CC8B8]/10 px-4 text-[13px] font-medium text-[#5CC8B8] hover:bg-[#5CC8B8]/20"
-                      >
-                        Patent Specs (Form 2) ↗
-                      </button>
-                    )}
-                  </div>
-                </div>
-
-                {/* Right col: Data-Flow Stepper */}
-                <div className="flex flex-col gap-5.5 min-w-0">
-                  <figure className="m-0 flex flex-col gap-3.5 rounded-[16px] border border-[#22384E] bg-[#12263A] p-5.5 pb-3.5">
-                    <figcaption className="flex items-baseline justify-between gap-3">
-                      <span className="lbl text-[11.5px] text-[#9FB0C2]">How it works</span>
-                      <span className="text-[13px] text-[#9FB0C2]">source → decision</span>
-                    </figcaption>
-
-                    <div className="relative">
-                      <span
-                        aria-hidden="true"
-                        className="absolute top-6 bottom-6 left-4 w-[2px] bg-[#22384E]"
-                      >
-                        <span className="flow-pulse" />
-                      </span>
-
-                      <ol className="relative m-0 flex list-none flex-col p-0">
-                        {p.flow.map((f) => (
-                          <li
-                            key={f.i}
-                            className="grid grid-cols-[36px_minmax(0,1fr)] gap-4 py-2.5"
-                          >
-                            <span
-                              className="flow-node grid h-9 w-9 place-items-center rounded-full border-2 border-[#22384E] bg-[#0B1B2B] text-[14px] font-bold text-[#9FB0C2]"
-                              style={{ animationDelay: f.delay }}
-                              aria-hidden="true"
-                            >
-                              {f.i}
-                            </span>
-                            <span className="flex flex-col gap-1 pt-1 min-w-0">
-                              <span className="flex flex-wrap items-baseline gap-2">
-                                <span className="lbl text-[11px] text-[#9FB0C2]">{f.kind}</span>
-                                <span
-                                  className="flow-title text-[16px] font-semibold text-[#E6ECF2]"
-                                  style={{ animationDelay: f.delay }}
-                                >
-                                  {f.t}
-                                </span>
-                              </span>
-                              <span className="text-[14px] leading-relaxed text-[#9FB0C2]">
-                                {f.d}
-                              </span>
-                            </span>
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
-                  </figure>
-
-                  <div className="flex flex-wrap gap-1.5">
-                    {p.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-full border border-[#22384E] px-3 py-1 text-[13px] text-[#9FB0C2]"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <details className="border-t border-[#22384E] pt-3.5">
-                    <summary className="flex min-h-[32px] items-center justify-between text-[15px] font-semibold text-[#E6ECF2]">
-                      <span>Under the hood</span>
-                      <span className="plus text-[22px] text-[#5CC8B8]" aria-hidden="true">
-                        +
-                      </span>
-                    </summary>
-                    <div className="mt-2 text-[14px] leading-relaxed text-[#9FB0C2]">
-                      <p className="m-0">{p.deep}</p>
-                      {p.id === 'dcos' && (
-                        <div className="mt-3">
-                          <button
-                            type="button"
-                            onClick={() => handleOpenPatents()}
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-[#5CC8B8] underline hover:text-white"
-                          >
-                            <span>Inspect 3 Form 2 Indian Patent Specifications</span>
-                            <span>↗</span>
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  </details>
-                </div>
-              </article>
-            ))}
+          <div className="flex flex-col gap-10">
+            {projectOrder.map((id) => renderProject(id))}
+            <PlusOneShowcase />
           </div>
-
-          {/* PlusOne Callout */}
-          <a
-            className="card rv flex flex-wrap items-center justify-between gap-4 rounded-[22px] border border-dashed border-[#22384E] p-6 text-[#E6ECF2] no-underline hover:border-[#5CC8B8]"
-            href="https://github.com/suryanshu1520-1/PlusOne"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="flex flex-wrap items-baseline gap-x-4 gap-y-1.5">
-              <span className="lbl text-[#9FB0C2]">Also built</span>
-              <span className="ttl font-['Source_Serif_4',Georgia,serif] text-[26px] font-medium">
-                PlusOne
-              </span>
-              <span className="text-[15px] text-[#9FB0C2]">
-                Android habit companion with a hand-built 60 fps particle engine, synthesised audio
-                and custom haptics in Kotlin.
-              </span>
-            </span>
-            <span className="text-[14px] font-semibold text-[#5CC8B8]">Source ↗</span>
-          </a>
         </div>
       </section>
 
