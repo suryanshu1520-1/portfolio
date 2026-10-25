@@ -41,6 +41,9 @@ export default function App() {
     n: `0${i + 1}`,
   }))
 
+  const tark = REDESIGN_PROJECTS['tark']
+  const otherProjects = projects.filter((p) => p.id !== 'tark')
+
   const offers = isHire ? OFFERS_HIRE : OFFERS_BUILD
 
   return (
@@ -305,8 +308,165 @@ export default function App() {
             </p>
           </div>
 
+          {/* ── FLAGSHIP SYSTEM CENTERPIECE ── */}
+          <article className="card rv relative overflow-hidden rounded-[26px] border border-[#2D455E] bg-gradient-to-b from-[#0F2236] to-[#0A1A2A] p-[clamp(26px,3.8vw,52px)] shadow-[0_20px_50px_rgba(4,14,26,0.6)]">
+            {/* Top header badge */}
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#22384E] pb-5">
+              <div className="flex items-center gap-3">
+                <span className="lbl text-[#5CC8B8] text-[12px] tracking-widest">FLAGSHIP SYSTEM · 01</span>
+                <span className="text-[#9FB0C2]">·</span>
+                <span className="text-[13px] text-[#9FB0C2]">Intelligence Pipeline &amp; Exam Telemetry</span>
+              </div>
+              <div className="flex items-center gap-2 rounded-full border border-[#5CC8B8]/30 bg-[#5CC8B8]/10 px-3.5 py-1 text-[12px] text-[#5CC8B8]">
+                <span className="h-2 w-2 rounded-full bg-[#5CC8B8] animate-pulse" />
+                <span>Live at tark.live</span>
+              </div>
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-12 items-start">
+              {/* Left Column: Narrative, Problem/Built, Impact & Stats */}
+              <div className="lg:col-span-6 flex flex-col gap-6">
+                <div className="flex flex-col gap-2">
+                  <h3 className="ttl m-0 font-['Source_Serif_4',Georgia,serif] text-[clamp(34px,3.8vw,50px)] font-medium leading-[1.05] tracking-[-0.02em] text-[#F4ECD8]">
+                    {tark.name}
+                  </h3>
+                  <p className="m-0 text-[18.5px] leading-[1.48] text-[#E6ECF2] font-normal">
+                    {tark.oneLine}
+                  </p>
+                  <p className="m-0 text-[14px] text-[#9FB0C2]">{tark.context}</p>
+                </div>
+
+                <div className="grid grid-cols-1 gap-4.5 pt-1 sm:grid-cols-2">
+                  <div className="flex flex-col gap-1.5">
+                    <span className="lbl text-[11.5px] text-[#9FB0C2]">The problem</span>
+                    <p className="m-0 text-[15px] leading-relaxed text-[#E6ECF2]/85">
+                      {tark.problem}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <span className="lbl text-[11.5px] text-[#9FB0C2]">What I built</span>
+                    <p className="m-0 text-[15px] leading-relaxed text-[#E6ECF2]/85">
+                      {tark.did}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-1.5 rounded-[14px] border border-[#22384E] bg-[#12263A]/80 p-4.5">
+                  <span className="lbl text-[11.5px] text-[#5CC8B8]">
+                    Why it matters beyond exams
+                  </span>
+                  <p className="m-0 text-[15px] leading-relaxed text-[#E6ECF2]">{tark.why}</p>
+                </div>
+
+                {/* Architectural Numbers */}
+                <div className="grid grid-cols-2 gap-3 pt-1 sm:grid-cols-4">
+                  <div className="flex flex-col rounded-xl border border-[#22384E]/70 bg-[#071626]/80 p-3">
+                    <span className="font-['Source_Serif_4',Georgia,serif] text-[22px] font-medium text-[#F4ECD8]">4,156</span>
+                    <span className="text-[11.5px] text-[#9FB0C2] mt-0.5">Past Papers Mined</span>
+                  </div>
+                  <div className="flex flex-col rounded-xl border border-[#22384E]/70 bg-[#071626]/80 p-3">
+                    <span className="font-['Source_Serif_4',Georgia,serif] text-[22px] font-medium text-[#F4ECD8]">65k+</span>
+                    <span className="text-[11.5px] text-[#9FB0C2] mt-0.5">Lines of Code</span>
+                  </div>
+                  <div className="flex flex-col rounded-xl border border-[#22384E]/70 bg-[#071626]/80 p-3">
+                    <span className="font-['Source_Serif_4',Georgia,serif] text-[22px] font-medium text-[#5CC8B8]">₹0</span>
+                    <span className="text-[11.5px] text-[#9FB0C2] mt-0.5">Recurring Infra</span>
+                  </div>
+                  <div className="flex flex-col rounded-xl border border-[#22384E]/70 bg-[#071626]/80 p-3">
+                    <span className="font-['Source_Serif_4',Georgia,serif] text-[22px] font-medium text-[#E6ECF2]">+2 / -0.66</span>
+                    <span className="text-[11.5px] text-[#9FB0C2] mt-0.5">UPSC Marking</span>
+                  </div>
+                </div>
+
+                <div className="mt-auto flex flex-wrap gap-3 pt-2">
+                  <a
+                    className="btn inline-flex min-h-[46px] items-center gap-2 rounded-full bg-[#E6ECF2] px-6 text-[15px] font-semibold text-[#0B1B2B] no-underline hover:bg-white"
+                    href={tark.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open {tark.liveLabel} <span aria-hidden="true">↗</span>
+                  </a>
+                  <a
+                    className="btn inline-flex min-h-[46px] items-center gap-2 rounded-full border border-[#22384E] px-5 text-[15px] font-medium text-[#E6ECF2] no-underline hover:border-[#5CC8B8]"
+                    href={tark.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Source (SKU) <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column: Authentic Editorial Brief Specimen */}
+              <div className="lg:col-span-6 flex flex-col gap-5.5 min-w-0">
+                <div className="flex flex-col gap-4 rounded-[18px] border border-[#22384E] bg-[#0E2034] p-6 pb-5 shadow-inner">
+                  <div className="flex items-baseline justify-between gap-3 border-b border-[#22384E]/80 pb-3">
+                    <span className="lbl text-[11.5px] text-[#5CC8B8]">Daily brief excerpt</span>
+                    <span className="text-[13px] text-[#9FB0C2]">PIB Delhi · Gazette lineage</span>
+                  </div>
+
+                  <div className="flex flex-col gap-2 pt-0.5">
+                    <h4 className="m-0 font-['Source_Serif_4',Georgia,serif] text-[19px] font-medium leading-[1.35] text-[#F4ECD8]">
+                      Cabinet approves PM-Surya Ghar: Muft Bijli Yojana with ₹75,021 crore outlay
+                    </h4>
+                    <p className="m-0 text-[14.5px] leading-relaxed text-[#9FB0C2]">
+                      Provides up to 300 units of free electricity monthly for 1 crore households, backed by statutory central financial assistance.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-3 pt-3 border-t border-[#22384E]/70 sm:grid-cols-2 text-[13px]">
+                    <div className="flex flex-col gap-0.5">
+                      <span className="lbl text-[10.5px] text-[#9FB0C2]">Syllabus linkage</span>
+                      <span className="text-[13.5px] text-[#E6ECF2] font-medium">GS Paper III (Energy Infrastructure)</span>
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="lbl text-[10.5px] text-[#9FB0C2]">Historical exam prior</span>
+                      <span className="text-[13.5px] text-[#E6ECF2] font-medium">Mined from 4,156 past questions</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-2 border-t border-[#22384E]/50 text-[12.5px] text-[#5CC8B8]">
+                    <span>✓ Sentence-level statutory grounding</span>
+                    <span className="text-[#9FB0C2]">Zero contested claims</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {tark.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-[#22384E] px-3 py-1 text-[13px] text-[#9FB0C2]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <details className="border-t border-[#22384E] pt-3.5">
+                  <summary className="flex min-h-[32px] items-center justify-between text-[15px] font-semibold text-[#E6ECF2]">
+                    <span>Under the hood</span>
+                    <span className="plus text-[22px] text-[#5CC8B8]" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="mt-2 text-[14px] leading-relaxed text-[#9FB0C2]">
+                    <p className="m-0">{tark.deep}</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          {/* ── ADDITIONAL SYSTEMS & DOMAIN STUDIES ── */}
+          <div className="pt-6 pb-2 flex items-center gap-4" aria-hidden="true">
+            <div className="h-px flex-1 bg-[#22384E]" />
+            <span className="lbl text-[#9FB0C2] text-[11px] tracking-widest uppercase">
+              Additional Systems &amp; Domain Studies
+            </span>
+            <div className="h-px flex-1 bg-[#22384E]" />
+          </div>
+
           <div className="flex flex-col gap-5">
-            {projects.map((p) => (
+            {otherProjects.map((p) => (
               <article
                 key={p.id}
                 className="card rv grid grid-cols-1 gap-x-14 gap-y-9 rounded-[22px] border border-[#22384E] p-[clamp(22px,3vw,44px)] lg:grid-cols-2"
@@ -316,11 +476,6 @@ export default function App() {
                   <div className="flex flex-wrap items-center gap-x-3.5 gap-y-2.5">
                     <span className="lbl text-[#5CC8B8]">{p.n}</span>
                     <span className="lbl text-[#9FB0C2]">{p.tag}</span>
-                    {p.flagship && (
-                      <span className="lbl rounded-full bg-[#5CC8B8] px-2.5 py-1 text-[#0B1B2B]">
-                        Flagship
-                      </span>
-                    )}
                   </div>
 
                   <h3 className="ttl m-0 font-['Source_Serif_4',Georgia,serif] text-[clamp(30px,3.2vw,46px)] font-medium leading-[1.04] tracking-[-0.02em]">
@@ -344,15 +499,6 @@ export default function App() {
                       </p>
                     </div>
                   </div>
-
-                  {p.flagship && (
-                    <div className="flex flex-col gap-1.5 rounded-[14px] border border-[#22384E] bg-[#12263A] p-4">
-                      <span className="lbl text-[11.5px] text-[#5CC8B8]">
-                        Why it matters beyond exams
-                      </span>
-                      <p className="m-0 text-[15px] text-[#E6ECF2]">{p.why}</p>
-                    </div>
-                  )}
 
                   <div className="mt-auto flex flex-wrap gap-2.5 pt-2">
                     <a
@@ -383,88 +529,54 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Right col: Data-Flow Stepper or Editorial Specimen */}
+                {/* Right col: Data-Flow Stepper */}
                 <div className="flex flex-col gap-5.5 min-w-0">
-                  {p.id === 'tark' ? (
-                    <div className="flex flex-col gap-4 rounded-[16px] border border-[#22384E] bg-[#12263A] p-5.5 pb-4.5">
-                      <div className="flex items-baseline justify-between gap-3 border-b border-[#22384E]/80 pb-3">
-                        <span className="lbl text-[11.5px] text-[#5CC8B8]">Daily brief excerpt</span>
-                        <span className="text-[13px] text-[#9FB0C2]">PIB Delhi · Gazette lineage</span>
-                      </div>
+                  <figure className="m-0 flex flex-col gap-3.5 rounded-[16px] border border-[#22384E] bg-[#12263A] p-5.5 pb-3.5">
+                    <figcaption className="flex items-baseline justify-between gap-3">
+                      <span className="lbl text-[11.5px] text-[#9FB0C2]">How it works</span>
+                      <span className="text-[13px] text-[#9FB0C2]">source → decision</span>
+                    </figcaption>
 
-                      <div className="flex flex-col gap-2 pt-0.5">
-                        <h4 className="m-0 font-['Source_Serif_4',Georgia,serif] text-[18px] font-medium leading-[1.35] text-[#E6ECF2]">
-                          Cabinet approves PM-Surya Ghar: Muft Bijli Yojana with ₹75,021 crore outlay
-                        </h4>
-                        <p className="m-0 text-[14.5px] leading-relaxed text-[#9FB0C2]">
-                          Provides up to 300 units of free electricity monthly for 1 crore households, backed by statutory central financial assistance.
-                        </p>
-                      </div>
+                    <div className="relative">
+                      <span
+                        aria-hidden="true"
+                        className="absolute top-6 bottom-6 left-4 w-[2px] bg-[#22384E]"
+                      >
+                        <span className="flow-pulse" />
+                      </span>
 
-                      <div className="grid grid-cols-1 gap-3 pt-3 border-t border-[#22384E]/70 sm:grid-cols-2 text-[13px]">
-                        <div className="flex flex-col gap-0.5">
-                          <span className="lbl text-[10.5px] text-[#9FB0C2]">Syllabus linkage</span>
-                          <span className="text-[13.5px] text-[#E6ECF2] font-medium">GS Paper III (Energy Infrastructure)</span>
-                        </div>
-                        <div className="flex flex-col gap-0.5">
-                          <span className="lbl text-[10.5px] text-[#9FB0C2]">Historical exam prior</span>
-                          <span className="text-[13.5px] text-[#E6ECF2] font-medium">Mined from 4,156 past questions</span>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between pt-2 border-t border-[#22384E]/50 text-[12.5px] text-[#5CC8B8]">
-                        <span>✓ Sentence-level statutory grounding</span>
-                        <span className="text-[#9FB0C2]">Zero contested claims</span>
-                      </div>
-                    </div>
-                  ) : (
-                    <figure className="m-0 flex flex-col gap-3.5 rounded-[16px] border border-[#22384E] bg-[#12263A] p-5.5 pb-3.5">
-                      <figcaption className="flex items-baseline justify-between gap-3">
-                        <span className="lbl text-[11.5px] text-[#9FB0C2]">How it works</span>
-                        <span className="text-[13px] text-[#9FB0C2]">source → decision</span>
-                      </figcaption>
-
-                      <div className="relative">
-                        <span
-                          aria-hidden="true"
-                          className="absolute top-6 bottom-6 left-4 w-[2px] bg-[#22384E]"
-                        >
-                          <span className="flow-pulse" />
-                        </span>
-
-                        <ol className="relative m-0 flex list-none flex-col p-0">
-                          {p.flow.map((f) => (
-                            <li
-                              key={f.i}
-                              className="grid grid-cols-[36px_minmax(0,1fr)] gap-4 py-2.5"
+                      <ol className="relative m-0 flex list-none flex-col p-0">
+                        {p.flow.map((f) => (
+                          <li
+                            key={f.i}
+                            className="grid grid-cols-[36px_minmax(0,1fr)] gap-4 py-2.5"
+                          >
+                            <span
+                              className="flow-node grid h-9 w-9 place-items-center rounded-full border-2 border-[#22384E] bg-[#0B1B2B] text-[14px] font-bold text-[#9FB0C2]"
+                              style={{ animationDelay: f.delay }}
+                              aria-hidden="true"
                             >
-                              <span
-                                className="flow-node grid h-9 w-9 place-items-center rounded-full border-2 border-[#22384E] bg-[#0B1B2B] text-[14px] font-bold text-[#9FB0C2]"
-                                style={{ animationDelay: f.delay }}
-                                aria-hidden="true"
-                              >
-                                {f.i}
-                              </span>
-                              <span className="flex flex-col gap-1 pt-1 min-w-0">
-                                <span className="flex flex-wrap items-baseline gap-2">
-                                  <span className="lbl text-[11px] text-[#9FB0C2]">{f.kind}</span>
-                                  <span
-                                    className="flow-title text-[16px] font-semibold text-[#E6ECF2]"
-                                    style={{ animationDelay: f.delay }}
-                                  >
-                                    {f.t}
-                                  </span>
-                                </span>
-                                <span className="text-[14px] leading-relaxed text-[#9FB0C2]">
-                                  {f.d}
+                              {f.i}
+                            </span>
+                            <span className="flex flex-col gap-1 pt-1 min-w-0">
+                              <span className="flex flex-wrap items-baseline gap-2">
+                                <span className="lbl text-[11px] text-[#9FB0C2]">{f.kind}</span>
+                                <span
+                                  className="flow-title text-[16px] font-semibold text-[#E6ECF2]"
+                                  style={{ animationDelay: f.delay }}
+                                >
+                                  {f.t}
                                 </span>
                               </span>
-                            </li>
-                          ))}
-                        </ol>
-                      </div>
-                    </figure>
-                  )}
+                              <span className="text-[14px] leading-relaxed text-[#9FB0C2]">
+                                {f.d}
+                              </span>
+                            </span>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  </figure>
 
                   <div className="flex flex-wrap gap-1.5">
                     {p.stack.map((tech) => (
@@ -504,6 +616,7 @@ export default function App() {
               </article>
             ))}
           </div>
+
 
           {/* PlusOne Callout */}
           <a
